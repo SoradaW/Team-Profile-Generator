@@ -2,7 +2,7 @@
 
 ## Object-Oriented Programming
 
-This application will take in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. 
+This project is to create a command-line application that dynamically generates the team profile HTML webpage that displays summaries for each person from a user's input. Check out [here](https://) for an example.
 
 ## Table of Contents
 
@@ -74,9 +74,9 @@ The following image shows a mock-up of the generated HTML’s appearance and fun
 
 ## Installation
 
-Here are some guidelines to help get started:
+Here are some guidelines to help you get started:
 
-The application use [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
+The application use [Jest package](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer package](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
 
 ```bash
 node index.js
