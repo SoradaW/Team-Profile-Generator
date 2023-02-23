@@ -2,41 +2,43 @@
 
 ## Object-Oriented Programming
 
-This project is to create a command-line application that dynamically generates the team profile HTML webpage that displays summaries for each person from a user's input. Check out [here](https://) for an example.
+This application is a Node command line application that dynamically generates the team member profile HTML webpage, that displays summaries for each person from the user's input. 
 
 ## Table of Contents
 
-* [Instructions](#instructions)
-* [Usage](#usage)
 * [Installation](#installation)
+* [Usage](#usage)
+* [Methodology](#methodology)
 * [License](#license)
 * [Questions](#review)
 
-## Instructions
- 
-* Create a command-line application that accepts user input.   
-  * Create classes for each team member and export them. The tests for these classes (in the `_tests_` directory) must ALL pass.     
-    * The first class is an `Employee` parent class with the following properties and methods:       
-      * `name`
-      * `id`
-      * `email`
-      * `getName()`
-      * `getId()`
-      * `getEmail()`
-      * `getRole()`&mdash;returns `'Employee'`     
-    * The other three classes will extend `Employee`.      
-    * In addition to `Employee`'s properties and methods, `Manager` will also have the following:
-      * `officeNumber`
-      * `getRole()`&mdash;overridden to return `'Manager'`
-    * In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
-      * `github`&mdash;GitHub username
-      * `getGithub()`
-      * `getRole()`&mdash;overridden to return `'Engineer'`
-    * In addition to `Employee`'s properties and methods, `Intern` will also have the following:
-      * `school`
-      * `getSchool()`
-      * `getRole()`&mdash;overridden to return `'Intern'`
-    * Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format. 
+## Mock-Up
+
+The following image shows a mock-up of the generated HTML’s appearance and functionality:
+
+![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/14-object-oriented-programming-challenge-demo.png)
+
+Check out [here](https://) for live example.
+
+## Installation
+
+Here are some guidelines:
+
+* Create new repository in GitHub, then `git clone` to your local.
+
+* Create a `.gitignore` file and include `node_modules/` so that your `node_modules` directory isn't tracked or uploaded to GitHub.
+
+* Make sure that your repo includes a `package.json` with the required dependencies. You can create one by running `npm init` when you first set up the project, before installing any dependencies.
+
+* Run `npm install` in order to install the following npm package.
+
+  * The application use `Jest package` for running the unit tests.
+
+  * `Inquirer package` for collecting input from the user. 
+
+* Once you have `npm install` your dependencies, you can run the Node CLI application with `npm start` and you can run `npm test` at anytime.
+
+* The application will be invoked by using the `node index.js` command.
 
 ## Usage
 
@@ -62,27 +64,39 @@ This project is to create a command-line application that dynamically generates 
       * School
     * When a user decides to finish building their team then they exit the application, and the HTML is generated.
 
----
+## Methodology
 
-## Mock-Up
+The dirctory structure of the application as follows:
 
-The following image shows a mock-up of the generated HTML’s appearance and functionality:
-
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/14-object-oriented-programming-challenge-demo.png)
-
----
-
-## Installation
-
-Here are some guidelines to help you get started:
-
-The application use [Jest package](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer package](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
-
-```bash
-node index.js
+```
+lib/      // Employee classes and code to generate HTML 
+src/      // Templates for main HTML <body> and employee <div>s
+tests/    // Jest tests
 ```
 
----
+* Create a command-line application that accepts user input.   
+  * Create classes for each team member and export them. The tests for these classes (in the `_tests_` directory) must ALL pass.     
+    * The first class is an `Employee` parent class with the following properties and methods:       
+      * `name`
+      * `id`
+      * `email`
+      * `getName()`
+      * `getId()`
+      * `getEmail()`
+      * `getRole()`&mdash;returns `'Employee'`     
+    * The other three classes will extend `Employee`.      
+    * In addition to `Employee`'s properties and methods, `Manager` will also have the following:
+      * `officeNumber`
+      * `getRole()`&mdash;overridden to return `'Manager'`
+    * In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
+      * `github`&mdash;GitHub username
+      * `getGithub()`
+      * `getRole()`&mdash;overridden to return `'Engineer'`
+    * In addition to `Employee`'s properties and methods, `Intern` will also have the following:
+      * `school`
+      * `getSchool()`
+      * `getRole()`&mdash;overridden to return `'Intern'`
+    * Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format. 
 
 ## Review
 
