@@ -196,10 +196,6 @@ const internQuestions = [
 ]; 
 // end of intern questions
 
-//module.exports = {
-//  manager: managerQuestions,
-//};
-
 // function to create a manager object
 async function createManager() {
   let managerResponses = await inquirer.prompt(managerQuestions);
@@ -221,5 +217,27 @@ async function init() {
   }
 };
 
+// fucntion to create team member //! need fix
+async function confirmEmployeeResponses() {
+  let confirmEmployeeResponses = await inquirer.prompt(confirmEmployee);
+
+  // The switch case statement is also used for decision-making purposes. 
+  // In some cases, using the switch case statement is seen to be more convenient than if-else statements.
+  switch (confirmEmployeeResponses.confirmEmployees) {
+    case false:
+      console.log("Thank you for your input. Here are your team members: ", employees);
+      console.log("Generating your HTML page next...");
+      return;
+
+    // if user would like to add another team member
+    case true:
+      await createEmployee();
+  };
+};
+
+// fuction to create employee / engineer or intern
+//async function createEmployee() {
+  //let employeeRole = await inquirer.prompt(employeeRole);
+//}
 // function call to initialize program
 init();
