@@ -1,0 +1,25 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "## Object-Oriented Programming",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoradaW/Team-Profile-Generator.git"
+  },
+  "author": "SWright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SoradaW/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/SoradaW/Team-Profile-Generator#readme",
+  "dependencies": {
+    "jest": "^29.4.3"
+  }
+}
