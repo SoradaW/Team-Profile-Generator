@@ -60,7 +60,7 @@ const managerQuestions = [
     type: 'input',
     name: 'managerOfficeNumber',
     message: "What is team manager's office number?",
-    default: '248A',
+    default: '12A',
     validate: function (answer) {
       if (answer.length < 1) {
         return console.log("A valid office number is required.")
@@ -71,6 +71,30 @@ const managerQuestions = [
 ]; 
 // end of manager questions
 
-module.exports = {
-  manager: managerQuestions,
+//module.exports = {
+//  manager: managerQuestions,
+//};
+
+// function to create a manager object
+async function createManager() {
+  let managerResponses = await inquirer.prompt(managerQuestions);
+  console.log("Great! We've added a team manager: ");
 };
+
+// main function to initialize program
+// try catch finally in node.js handle runtime errors
+// async makes a function return a Promise
+async function init() {
+  try {
+    // prompt inquirer questions to gather info
+    // info about manager role
+    await createManager();
+
+  } 
+    catch (error) {
+    console.log(error);
+  }
+};
+
+// function call to initialize program
+init();
