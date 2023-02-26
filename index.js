@@ -76,7 +76,7 @@ const managerQuestions = [
 const confirmEmployee = [
   {
     type: 'confirm',
-    name: 'confirmEmployees',
+    name: 'conEmployees',
     message: "Would you like to add your team member?"
   }
 ];
@@ -84,7 +84,7 @@ const confirmEmployee = [
 const employeeRole = [
   {
     type: 'list',
-    name: 'employeeRoles',
+    name: 'empRoleLists',
     message: "Would you like to add an Engineer or Intern to the team?",
     choices: ['Engineer', 'Intern']
   }
@@ -210,7 +210,7 @@ async function createManager() {
 
   employees.push(newManager); //adds new items to the end of an array
 
-  console.log("Great! We've added a team manager: ", newManager);
+  console.log("Perfect! We've added a team manager: ", newManager);
 };
 
 // fucntion to create/add team members 
@@ -219,7 +219,7 @@ async function confirmAddsEmployee() {
 
   // The switch case statement is also used for decision-making purposes. 
   // In some cases, using the switch case statement is seen to be more convenient than if-else statements.
-  switch (confirmAddsEmployee.confirmEmployees) {
+  switch (confirmAddsEmployee.conEmployees) {
     case false:
       console.log("Thank you for your input. Here are your team members: ", employees);
       console.log("Generating your HTML page next...");
@@ -235,7 +235,7 @@ async function confirmAddsEmployee() {
 async function createEmployee() {
   let employeeRoleLists = await inquirer.prompt(employeeRole);
 
-  switch (employeeRoleLists.employeeRole) {
+  switch (employeeRoleLists.empRoleLists) {
     case 'Engineer':
       let engineerResponses = await inquirer.prompt(engineerQuestions);
       let newEngineer = new Engineer (
@@ -262,6 +262,7 @@ async function createEmployee() {
 
       employees.push(newIntern);
       console.log("Fantastic! We've added a new intern to the team: ", newIntern);
+
       await confirmAddsEmployee();
   };
 };
@@ -278,10 +279,9 @@ async function init() {
     // ask if to create team member
     await confirmAddsEmployee();
 
-  } 
-    catch (error) {
+  } catch (error) {
     console.log(error);
-  }
+  };
 };
 
 // function call to initialize program
