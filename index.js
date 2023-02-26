@@ -77,7 +77,7 @@ const confirmEmployee = [
   {
     type: 'confirm',
     name: 'confirmEmployees',
-    message: "Would you like to add team member?"
+    message: "Would you like to add your team member?"
   }
 ];
 
@@ -85,12 +85,12 @@ const employeeRole = [
   {
     type: 'list',
     name: 'employeeRoles',
-    message: "Would you like to add ad Engineer or Intern to the team?",
+    message: "Would you like to add an Engineer or Intern to the team?",
     choices: ['Engineer', 'Intern']
   }
 ];
 
-// intern questions
+// engineer questions
 const engineerQuestions = [
   {
     type: 'input',
@@ -199,7 +199,71 @@ const internQuestions = [
 // function to create a manager object
 async function createManager() {
   let managerResponses = await inquirer.prompt(managerQuestions);
-  console.log("Great! We've added a team manager: ");
+
+  // create new object from class and add to employee array
+  let newManager = new Manager (
+    managerResponses.managerName,
+    managerResponses.managerId,
+    managerResponses.managerEmail,
+    managerResponses.managerOfficeNumber
+  );
+
+  employees.push(newManager); //adds new items to the end of an array
+
+  console.log("Great! We've added a team manager: ", newManager);
+};
+
+// fucntion to create/add team members 
+async function confirmAddsEmployee() {
+  let confirmAddsEmployee = await inquirer.prompt(confirmEmployee);
+
+  // The switch case statement is also used for decision-making purposes. 
+  // In some cases, using the switch case statement is seen to be more convenient than if-else statements.
+  switch (confirmAddsEmployee.confirmEmployees) {
+    case false:
+      console.log("Thank you for your input. Here are your team members: ", employees);
+      console.log("Generating your HTML page next...");
+      return;
+
+    // if user would like to add another team member (Yes)
+    case true:
+      await createEmployee();
+  };
+};
+
+// fuction to create employee / engineer or intern
+async function createEmployee() {
+  let employeeRoleLists = await inquirer.prompt(employeeRole);
+
+  switch (employeeRoleLists.employeeRole) {
+    case 'Engineer':
+      let engineerResponses = await inquirer.prompt(engineerQuestions);
+      let newEngineer = new Engineer (
+        engineerResponses.engineerName,
+        engineerResponses.engineerId,
+        engineerResponses.engineerEmail,
+        engineerResponses.engineerGitHub
+      );
+
+      employees.push(newEngineer);
+      console.log("Fantastic! We've added a new engineer to the team: ", newEngineer);
+
+      await confirmAddsEmployee();
+      break; // jumps out of a switch statement
+    
+    case 'Intern':
+      let internResponses = await inquirer.prompt(internQuestions);
+      let newIntern = new Intern (
+        internResponses.internName,
+        internResponses.internId,
+        internResponses.internEmail,
+        internResponses.internSchool
+      );
+
+      employees.push(newIntern);
+      console.log("Fantastic! We've added a new intern to the team: ", newIntern);
+      await confirmAddsEmployee();
+  };
 };
 
 // main function to initialize program
@@ -211,33 +275,14 @@ async function init() {
     // info about manager role
     await createManager();
 
+    // ask if to create team member
+    await confirmAddsEmployee();
+
   } 
     catch (error) {
     console.log(error);
   }
 };
 
-// fucntion to create team member //! need fix
-async function confirmEmployeeResponses() {
-  let confirmEmployeeResponses = await inquirer.prompt(confirmEmployee);
-
-  // The switch case statement is also used for decision-making purposes. 
-  // In some cases, using the switch case statement is seen to be more convenient than if-else statements.
-  switch (confirmEmployeeResponses.confirmEmployees) {
-    case false:
-      console.log("Thank you for your input. Here are your team members: ", employees);
-      console.log("Generating your HTML page next...");
-      return;
-
-    // if user would like to add another team member
-    case true:
-      await createEmployee();
-  };
-};
-
-// fuction to create employee / engineer or intern
-//async function createEmployee() {
-  //let employeeRole = await inquirer.prompt(employeeRole);
-//}
 // function call to initialize program
 init();
