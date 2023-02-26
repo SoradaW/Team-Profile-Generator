@@ -238,6 +238,8 @@ async function createEmployee() {
   switch (employeeRoleLists.empRoleLists) {
     case 'Engineer':
       let engineerResponses = await inquirer.prompt(engineerQuestions);
+
+      // create new object from class and add to employee array
       let newEngineer = new Engineer (
         engineerResponses.engineerName,
         engineerResponses.engineerId,
@@ -253,6 +255,8 @@ async function createEmployee() {
     
     case 'Intern':
       let internResponses = await inquirer.prompt(internQuestions);
+
+      // create new object from class and add to employee array
       let newIntern = new Intern (
         internResponses.internName,
         internResponses.internId,
@@ -282,7 +286,18 @@ async function init() {
   } catch (error) {
     console.log(error);
   };
-};
 
+  // the render function will generate and return a block of HTML including templated div elements for each employee
+  try {
+    let renderHTML = render(employees);
+
+    // create an HTML file using the HTML returned from the render function
+    fs.writeFileSync('./output/index.html', renderHTML);
+
+    console.log('Success! Your HTML page has been generated in the output folder.')
+  } catch (error) {
+    console.log(error);
+  }
+};
 // function call to initialize program
 init();
