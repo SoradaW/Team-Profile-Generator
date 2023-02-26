@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+
+body {
+  background-color: #442d55ba;
+  font-family: 'Handlee', sans-serif;
+  color:#2c181b;
+  padding-bottom: 75px;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 60px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.jumbotron {
+  border-radius: 0;
+}
+
+.employee-card {
+  min-width: 275px;
+  max-width: 325px;
+  margin: 50px 25px;
+  box-shadow: 5px 5px #343333;
+}
+
+.card-header {
+  background-color:#b1a0eeb0;
+  border-bottom-style: none;
+  height: 130px;
+}

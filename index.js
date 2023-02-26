@@ -25,7 +25,7 @@ const managerQuestions = [
     type: 'input',
     name: 'managerName',
     message: "What is the team manager's name?",
-    default: 'Fisrtname Lastname',
+    default: 'Firstname Lastname',
     validate: function (answer) {
       if (answer.length < 2) {
         return console.log("A valid name is required.")
@@ -37,7 +37,6 @@ const managerQuestions = [
     type: 'input',
     name: 'managerId',
     message: "What is the team manager's employee ID?",
-    default: '123',
     validate: function (answer) {
       if (answer <=0) {
         return console.log("A valid employee ID is required.")
@@ -61,7 +60,6 @@ const managerQuestions = [
     type: 'input',
     name: 'managerOfficeNumber',
     message: "What is the team manager's office number?",
-    default: '12A',
     validate: function (answer) {
       if (answer.length < 1) {
         return console.log("A valid office number is required.")
@@ -96,7 +94,7 @@ const engineerQuestions = [
     type: 'input',
     name: 'engineerName',
     message: "What is your software engineer's name?",
-    default: 'Fisrtname Lastname',
+    default: 'Firstname Lastname',
     validate: function (answer) {
       if (answer.length < 2) {
         return console.log("A valid name is required.")
@@ -108,7 +106,6 @@ const engineerQuestions = [
     type: 'input',
     name: 'engineerId',
     message: "What is your software engineer's employee ID?",
-    default: '234',
     validate: function (answer) {
       if (answer <=0) {
         return console.log("A valid employee ID is required.")
@@ -132,7 +129,6 @@ const engineerQuestions = [
     type: 'input',
     name: 'engineerGitHub',
     message: "What is your software engineer's GitHub?",
-    default: 'SoradaW',
     validate: function (answer) {
       if (answer.length < 1) {
         return console.log("A valid GitHub is required.")
@@ -149,7 +145,7 @@ const internQuestions = [
     type: 'input',
     name: 'internName',
     message: "What is your intern's name?",
-    default: 'Fisrtname Lastname',
+    default: 'Firstname Lastname',
     validate: function (answer) {
       if (answer.length < 2) {
         return console.log("A valid name is required.")
@@ -161,7 +157,6 @@ const internQuestions = [
     type: 'input',
     name: 'internId',
     message: "What is your intern's employee ID?",
-    default: '345',
     validate: function (answer) {
       if (answer <=0) {
         return console.log("A valid employee ID is required.")
@@ -292,7 +287,7 @@ async function init() {
     let renderHTML = render(employees);
 
     // create an HTML file using the HTML returned from the render function
-    fs.writeFileSync('./output/index.html', renderHTML);
+    fs.writeFileSync('./output/team.html', renderHTML);
 
     console.log('Success! Your HTML page has been generated in the output folder.')
   } catch (error) {
