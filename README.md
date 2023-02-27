@@ -63,7 +63,7 @@ Here are some guidelines:
       * School
     * When a user decides to finish building their team then they exit the application, and the HTML is generated.
 
-The directory structure of the application as follows:
+* The directory structure of the application as follows:
 
 ```
 docs/     // Rendered HTML output
@@ -77,7 +77,7 @@ index.js  // Runs application (inquirer prompts and main functions)
 
 * A sample HTML file generated using the application click [here](https://soradaw.github.io/Team-Profile-Generator/)
 
-* Any questions please send me an sorada.wright@gmail.com
+* Any questions please contact me || sorada.wright@gmail.com
 
 ## License
 
