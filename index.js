@@ -287,7 +287,7 @@ async function init() {
     let renderHTML = render(employees);
 
     // create an HTML file using the HTML returned from the render function
-    fs.writeFileSync('./output/team.html', renderHTML);
+    fs.writeFileSync('./docs/team.html', renderHTML);
 
     console.log('Success! Your HTML page has been generated in the output folder.')
   } catch (error) {

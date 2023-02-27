@@ -10,15 +10,15 @@ This application is a Node command line application that dynamically generates t
 * [Usage](#usage)
 * [Methodology](#methodology)
 * [License](#license)
-* [Questions](#review)
+* [Questions](#questions)
 
 ## Mock-Up
 
 The following image shows a mock-up of the generated HTML’s appearance and functionality:
 
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/14-object-oriented-programming-challenge-demo.png)
+![HTML webpage titled “My Team” features boxes listing employee names, titles, and other key info.](./assets/my-team.jpg)
 
-Check out [here](https://) for live example.
+Check out [here](https://soradaw.github.io/Team-Profile-Generator/) for live example.
 
 ## Installation
 
@@ -69,42 +69,16 @@ Here are some guidelines:
 The dirctory structure of the application as follows:
 
 ```
+docs/     // Rendered HTML output
 lib/      // Employee classes and code to generate HTML 
 src/      // Templates for main HTML <body> and employee <div>s
 tests/    // Jest tests
+index.js  // Runs application (Inquirer prompts and main functions)
 ```
 
-* Create a command-line application that accepts user input.   
-  * Create classes for each team member and export them. The tests for these classes (in the `_tests_` directory) must ALL pass.     
-    * The first class is an `Employee` parent class with the following properties and methods:       
-      * `name`
-      * `id`
-      * `email`
-      * `getName()`
-      * `getId()`
-      * `getEmail()`
-      * `getRole()`&mdash;returns `'Employee'`     
-    * The other three classes will extend `Employee`.      
-    * In addition to `Employee`'s properties and methods, `Manager` will also have the following:
-      * `officeNumber`
-      * `getRole()`&mdash;overridden to return `'Manager'`
-    * In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
-      * `github`&mdash;GitHub username
-      * `getGithub()`
-      * `getRole()`&mdash;overridden to return `'Engineer'`
-    * In addition to `Employee`'s properties and methods, `Intern` will also have the following:
-      * `school`
-      * `getSchool()`
-      * `getRole()`&mdash;overridden to return `'Intern'`
-    * Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format. 
+## Questions
 
-## Review
-
-* A walkthrough video demonstrating the functionality of the application
-
-![Demo](/images/.gif)
-
-* A sample HTML file generated using the application click [here](https://)
+* A sample HTML file generated using the application click [here](https://soradaw.github.io/Team-Profile-Generator/)
 
 * Any questions please send me an [email](sorada.wright@gmail.com)
 
