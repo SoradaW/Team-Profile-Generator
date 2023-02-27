@@ -8,7 +8,6 @@ This application is a Node command line application that dynamically generates t
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [Methodology](#methodology)
 * [License](#license)
 * [Questions](#questions)
 
@@ -64,9 +63,7 @@ Here are some guidelines:
       * School
     * When a user decides to finish building their team then they exit the application, and the HTML is generated.
 
-## Methodology
-
-The dirctory structure of the application as follows:
+The directory structure of the application as follows:
 
 ```
 docs/     // Rendered HTML output
