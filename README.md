@@ -77,7 +77,7 @@ index.js  // Runs application (inquirer prompts and main functions)
 
 * A sample HTML file generated using the application click [here](https://soradaw.github.io/Team-Profile-Generator/)
 
-* Any questions please send me an [email](sorada.wright@gmail.com)
+* Any questions please send me an sorada.wright@gmail.com
 
 ## License
 
