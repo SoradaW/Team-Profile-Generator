@@ -70,7 +70,7 @@ docs/     // Rendered HTML output
 lib/      // Employee classes and code to generate HTML 
 src/      // Templates for main HTML <body> and employee <div>s
 tests/    // Jest tests
-index.js  // Runs application (Inquirer prompts and main functions)
+index.js  // Runs application (inquirer prompts and main functions)
 ```
 
 ## Questions
