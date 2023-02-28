@@ -77,6 +77,8 @@ index.js  // Runs application (inquirer prompts and main functions)
 
 * A sample HTML file generated using the application click [here](https://soradaw.github.io/Team-Profile-Generator/)
 
+* The tests for those classes ALL pass check [here](./assets/jest-test.jpg)
+
 * Any questions please contact me || sorada.wright@gmail.com
 
 ## License
